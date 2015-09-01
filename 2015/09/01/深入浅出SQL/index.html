@@ -4,15 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>深入浅出SQL | 唐三赞</title>
+    <title>深入浅出SQL笔记 | 唐三赞</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="tangwei">
     
 
     
-    <meta name="description" content="###一.数据和表###
-
+    <meta name="description" content="一.数据和表
 要在一个表中增加新的列不太方便，所以事前确定表的结构和数据类型非常重要。当然你可以用ALTER来增加新列。
 
 慎用DROP TABLE，不然数据全没了。
@@ -21,13 +20,12 @@ varchar是variable character的缩写，表示可变字符。
 
 desc是describe的缩写，用于查看表的结构。
 
-任何属于varchar、char、date、blob类型的值都要加单引号。而int">
+任何属于varchar、char、date、blob类型的值都要加单引号。而int和dec(浮点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入浅出SQL">
+<meta property="og:title" content="深入浅出SQL笔记">
 <meta property="og:url" content="http://tanwei.link/2015/09/01/深入浅出SQL/index.html">
 <meta property="og:site_name" content="唐三赞">
-<meta property="og:description" content="###一.数据和表###
-
+<meta property="og:description" content="一.数据和表
 要在一个表中增加新的列不太方便，所以事前确定表的结构和数据类型非常重要。当然你可以用ALTER来增加新列。
 
 慎用DROP TABLE，不然数据全没了。
@@ -36,12 +34,11 @@ varchar是variable character的缩写，表示可变字符。
 
 desc是describe的缩写，用于查看表的结构。
 
-任何属于varchar、char、date、blob类型的值都要加单引号。而int">
-<meta property="og:updated_time" content="2015-09-01T13:06:07.578Z">
+任何属于varchar、char、date、blob类型的值都要加单引号。而int和dec(浮点">
+<meta property="og:updated_time" content="2015-09-01T13:19:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入浅出SQL">
-<meta name="twitter:description" content="###一.数据和表###
-
+<meta name="twitter:title" content="深入浅出SQL笔记">
+<meta name="twitter:description" content="一.数据和表
 要在一个表中增加新的列不太方便，所以事前确定表的结构和数据类型非常重要。当然你可以用ALTER来增加新列。
 
 慎用DROP TABLE，不然数据全没了。
@@ -50,7 +47,7 @@ varchar是variable character的缩写，表示可变字符。
 
 desc是describe的缩写，用于查看表的结构。
 
-任何属于varchar、char、date、blob类型的值都要加单引号。而int">
+任何属于varchar、char、date、blob类型的值都要加单引号。而int和dec(浮点">
 <meta name="twitter:creator" content="@hystangwei">
 
     
@@ -111,14 +108,14 @@ desc是describe的缩写，用于查看表的结构。
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/09/01/深入浅出SQL/" title="深入浅出SQL" itemprop="url">深入浅出SQL</a>
+      <a href="/2015/09/01/深入浅出SQL/" title="深入浅出SQL笔记" itemprop="url">深入浅出SQL笔记</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="tangwei" target="_blank" itemprop="author">tangwei</a>
 		
   <p class="article-time">
-    <time datetime="2015-09-01T13:03:39.000Z" itemprop="datePublished"> 发表于 2015-09-01</time>
+    <time datetime="2015-09-01T12:35:00.000Z" itemprop="datePublished"> 发表于 2015-09-01</time>
     
   </p>
 </header>
@@ -127,108 +124,101 @@ desc是describe的缩写，用于查看表的结构。
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-数据和表"><span class="toc-number">1.</span> <span class="toc-text">一.数据和表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-_SELECT语句"><span class="toc-number">2.</span> <span class="toc-text">二. SELECT语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-_DELETE和UPDATE"><span class="toc-number">3.</span> <span class="toc-text">三. DELETE和UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-_聪明的表设计"><span class="toc-number">4.</span> <span class="toc-text">四. 聪明的表设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五-_ALTER"><span class="toc-number">5.</span> <span class="toc-text">五. ALTER</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六-_SELECT进阶"><span class="toc-number">6.</span> <span class="toc-text">六. SELECT进阶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七-_多张表的数据库设计"><span class="toc-number">7.</span> <span class="toc-text">七. 多张表的数据库设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八-_连接与多张表的操作"><span class="toc-number">8.</span> <span class="toc-text">八. 连接与多张表的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九-_查询中的查询"><span class="toc-number">9.</span> <span class="toc-text">九. 查询中的查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一零-_外联接、自联接与联合"><span class="toc-number">10.</span> <span class="toc-text">一零.      外联接、自联接与联合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一一-_约束、视图与事务"><span class="toc-number">11.</span> <span class="toc-text">一一.      约束、视图与事务</span></a></li></ol>
 		
 		</div>
 		
-		<p>###一.数据和表###</p>
-<ol>
+		<h3 id="一-数据和表">一.数据和表</h3><ol>
 <li><p>要在一个表中增加新的列不太方便，所以事前确定表的结构和数据类型非常重要。当然你可以用ALTER来增加新列。</p>
 </li>
-<li><p>慎用DROP TABLE，不然数据全没了。</p>
+<li><p>慎用<code>DROP TABLE</code>，不然数据全没了。</p>
 </li>
-<li><p>varchar是variable character的缩写，表示可变字符。</p>
+<li><p><code>varchar</code>是<code>variable character</code>的缩写，表示可变字符。</p>
 </li>
-<li><p>desc是describe的缩写，用于查看表的结构。</p>
+<li><p><code>desc</code>是<code>describe</code>的缩写，用于查看表的结构。</p>
 </li>
-<li><p>任何属于varchar、char、date、blob类型的值都要加单引号。而int和dec(浮点值)不用加单引号。</p>
+<li><p>任何属于<code>varchar</code>、<code>char</code>、<code>date</code>、<code>blob</code>类型的值都要加单引号。而<code>int</code>和<code>dec</code>(浮点值)不用加单引号。</p>
 </li>
-<li><p>为表插入数据时，可以使用任何一种INSERT语句。</p>
+<li><p>为表插入数据时，可以使用任何一种<code>INSERT</code>语句。</p>
 </li>
-<li><p>NULL是未定义的值，它不等于零，也不等于空值，值可以是NULL，但绝非等于NULL。</p>
+<li><p><code>NULL</code>是未定义的值，它不等于零，也不等于空值，值可以是<code>NULL</code>，但绝非等于<code>NULL</code>。</p>
 </li>
-<li><p>没有在INSERT语句中被赋值的列默认为NULL。</p>
+<li><p>没有在<code>INSERT</code>语句中被赋值的列默认为<code>NULL</code>。</p>
 </li>
-<li><p>使用关键字NOT NULL表示该列不接受NULL值。</p>
+<li><p>使用关键字<code>NOT NULL</code>表示该列不接受<code>NULL</code>值。</p>
 </li>
-<li><p>使用DEFAULT设定默认值。</p>
+<li><p>使用<code>DEFAULT</code>设定默认值。</p>
 </li>
 </ol>
 <a id="more"></a>
-<p>###二. SELECT语句###</p>
-<ol>
+<h3 id="二-_SELECT语句">二. SELECT语句</h3><ol>
 <li><p>单引号必须成对，有些英文中有一些地方会用单引号，可以用“\”来解决。不要使用双引号，虽然双引号好像也能用，但会引起意想不到的问题。</p>
 </li>
-<li><p>用IS NULL来查找未定义值</p>
+<li><p>用<code>IS NULL</code>来查找未定义值</p>
 </li>
-<li><p>LIKE喜欢和通配符在一起，%是任意数量的未知字符的替身，——是一个未知字符的替身。</p>
+<li><p><code>LIKE</code>喜欢和通配符在一起，%是任意数量的未知字符的替身，——是一个未知字符的替身。</p>
 </li>
-<li><p>between等于使用&lt;=加&gt;=，比后者更快。</p>
+<li><p><code>between</code>等于使用&lt;=加&gt;=，比后者更快。</p>
 </li>
-<li><p>用IN来表示值的集合，不然就用NOT IN</p>
+<li><p>用<code>IN</code>来表示值的集合，不然就用<code>NOT IN</code></p>
 </li>
-<li><p>NOT的用法：一定要紧跟WHERE、OR、AND，而NOT IN可以是例外。但为了代码容易看懂，能不用NOT最好。</p>
+<li><p><code>NOT</code>的用法：一定要紧跟<code>WHERE</code>、<code>OR</code>、<code>AND</code>，而<code>NOT IN</code>可以是例外。但为了代码容易看懂，能不用<code>NOT</code>最好。</p>
 </li>
 </ol>
-<p>###三. DELETE和UPDATE###</p>
-<ol>
-<li>UPDATE中的SET后面可以使用数学运算对数字批量操作，也可用于将原有列数据赋值给新增列</li>
+<h3 id="三-_DELETE和UPDATE">三. <code>DELETE</code>和<code>UPDATE</code></h3><ol>
+<li><code>UPDATE</code>中的<code>SET</code>后面可以使用数学运算对数字批量操作，也可用于将原有列数据赋值给新增列</li>
 </ol>
-<p>###四. 聪明的表设计###</p>
-<ol>
+<h3 id="四-_聪明的表设计">四. 聪明的表设计</h3><ol>
 <li>第一范式：</li>
 </ol>
 <p>A.每个数据行必须包含具有原子性的值</p>
 <p>①. 具有原子性数据的列不会有多个类型相同的值</p>
 <p>②. 具有原子性数据的表中不会有多个存储同类数据的列</p>
 <p>B.每个数据行必须有独一无二的识别项，人称主键</p>
-<p>①. 主键不可以为NULL</p>
+<p>①. 主键不可以为<code>NULL</code></p>
 <p>②. 插入新记录时必须指定主键值</p>
 <p>③. 主键必须简洁</p>
 <p>④. 主键值不可以被修改</p>
 <ol>
-<li><p>使用SHOW CREATE TABLE来查看表的创建方式</p>
+<li><p>使用<code>SHOW CREATE TABLE</code>来查看表的创建方式</p>
 </li>
-<li><p>在CREATE中使用PREMARY KEY来指定主键，可以通过增加AUTO_INCREMENT实现自动从1递增，每个表中只有一列可以加上AUTO_INCREMENT，该列必须为整数且不能包含NULL。</p>
-</li>
-</ol>
-<p>###五. ALTER###</p>
-<ol>
-<li>ALTER命令几乎能够改变表里的一切，但要小心如果改变列的类型，可能会遗失数据。</li>
-</ol>
-<p>A.CHANGE,可同时改变现有列的名称和数据类型</p>
-<p>B.MODIFY,修改现有列的数据类型和位置</p>
-<p>C.ADD，在当前表中添加一列</p>
-<p>D.DROP，从表中删除某列</p>
-<p>E.RENAME TO，更改名字</p>
-<ol>
-<li>有很多有用的字符串函数让我们非常方便做查询，比如RIGHT(),LEFT(),SUBSTRING_INDEX(),SUBSTRING(),UPPER(),LOWER(),REVERSE(),LTRIM(),RTRIM()等，但要注意字符串函数不会改变存储在表中的内容，它只是把字符串修改后的模样当成查询结果返回。</li>
-</ol>
-<p>###六. SELECT进阶###</p>
-<ol>
-<li><p>利用CASE检查所有列的值和条件</p>
-</li>
-<li><p>ORDER BY可以使用两个字段</p>
-</li>
-<li><p>注意用在ORDER BY中DESC与DESC TABLE是不用的缩写。</p>
-</li>
-<li><p>SELECT后加SUM(),COUNT(),AVERAGE(),MAX(),MIN()来实现不同的查询</p>
-</li>
-<li><p>SELECT后面的DISTINCT能选出无重复的值，如果搭配COUNT()使用可以查出无重复的统计值。</p>
-</li>
-<li><p>SELECT搭配ORDER BY和LIMIT可以筛选出前几名。当然也可以筛选出特定的名次（请注意SQL从0开始编号）,LIMIT 1,4表示从2行开始选4个记录。</p>
-</li>
-<li><p>GROUP BY表示分组来查找，也可将重复的值合并成一个值。</p>
+<li><p>在<code>CREATE</code>中使用<code>PREMARY KEY</code>来指定主键，可以通过增加<code>AUTO_INCREMENT</code>实现自动从1递增，每个表中只有一列可以加上<code>AUTO_INCREMENT</code>，该列必须为整数且不能包含<code>NULL</code>。</p>
 </li>
 </ol>
-<p>###七. 多张表的数据库设计###</p>
+<h3 id="五-_ALTER">五. <code>ALTER</code></h3><ol>
+<li><code>ALTER</code>命令几乎能够改变表里的一切，但要小心如果改变列的类型，可能会遗失数据。</li>
+</ol>
+<p>A.<code>CHANGE</code>,可同时改变现有列的名称和数据类型</p>
+<p>B.<code>MODIFY</code>,修改现有列的数据类型和位置</p>
+<p>C.<code>ADD</code>，在当前表中添加一列</p>
+<p>D.<code>DROP</code>，从表中删除某列</p>
+<p>E.<code>RENAME TO</code>，更改名字</p>
 <ol>
+<li>有很多有用的字符串函数让我们非常方便做查询，比如<code>RIGHT(),LEFT(),SUBSTRING_INDEX(),SUBSTRING(),UPPER(),LOWER(),REVERSE(),LTRIM(),RTRIM()</code>等，但要注意字符串函数不会改变存储在表中的内容，它只是把字符串修改后的模样当成查询结果返回。</li>
+</ol>
+<h3 id="六-_SELECT进阶">六. <code>SELECT</code>进阶</h3><ol>
+<li><p>利用<code>CASE</code>检查所有列的值和条件</p>
+</li>
+<li><p><code>ORDER BY</code>可以使用两个字段</p>
+</li>
+<li><p>注意用在<code>ORDER BY</code>中<code>DESC</code>与<code>DESC TABLE</code>是不用的缩写。</p>
+</li>
+<li><p><code>SELECT</code>后加<code>SUM(),COUNT(),AVERAGE(),MAX(),MIN()</code>来实现不同的查询</p>
+</li>
+<li><p><code>SELECT</code>后面的<code>DISTINCT</code>能选出无重复的值，如果搭配<code>COUNT()</code>使用可以查出无重复的统计值。</p>
+</li>
+<li><p><code>SELECT</code>搭配<code>ORDER BY</code>和<code>LIMIT</code>可以筛选出前几名。当然也可以筛选出特定的名次（请注意SQL从0开始编号）,LIMIT 1,4表示从2行开始选4个记录。</p>
+</li>
+<li><p><code>GROUP BY</code>表示分组来查找，也可将重复的值合并成一个值。</p>
+</li>
+</ol>
+<h3 id="七-_多张表的数据库设计">七. 多张表的数据库设计</h3><ol>
 <li>外键：其他表的主键</li>
 </ol>
 <p>A.外键可能与它引用的主键名称不同</p>
 <p>B.外键使用的主键叫父键</p>
 <p>C.外键所在的表叫父表</p>
-<p>D.外键的值可以是NULL，主键不能为NULL</p>
+<p>D.外键的值可以是<code>NULL</code>，主键不能为<code>NULL</code></p>
 <p>E.外键无需唯一，事实上通常都不唯一</p>
 <p>F.外键不一定必须是父表的主键，但必须有唯一性。</p>
 <ol>
@@ -253,32 +243,32 @@ desc是describe的缩写，用于查看表的结构。
 <p>A.规则1：先符合第二范式</p>
 <p>B.规则2：没有传递函数依赖</p>
 <p>①. 传递函数依赖：非键列与相同表中的其他列有关联</p>
-<p>###八. 连接与多张表的操作###</p>
-<ol>
-<li><p>AS：一切都与别名有关（aliasing）,也用于引用某个查询的结果来安插至另一个表中，配合CREATE TABLE使用。</p>
+<h3 id="八-_连接与多张表的操作">八. 连接与多张表的操作</h3><ol>
+<li><p><code>AS</code>：一切都与别名有关（aliasing）,也用于引用某个查询的结果来安插至另一个表中，配合<code>CREATE TABLE</code>使用。</p>
 </li>
-<li><p>INNER JOIN：内联接，通过查询中的条件移除了某些结果数据行后的交叉连接。</p>
+<li><p><code>INNER JOIN</code>：内联接，通过查询中的条件移除了某些结果数据行后的交叉连接。</p>
 </li>
 </ol>
-<p>A.SELECT somecolumns</p>
-<p>B.FROM table1</p>
-<p>①. INNER JOIN</p>
-<p>②. table2</p>
-<p>C.ON somecondition;</p>
+<p>A.<code>SELECT somecolumns</code></p>
+<p>B.<code>FROM table1</code></p>
+<p>①. <code>INNER JOIN</code></p>
+<p>②. <code>table2</code></p>
+<p>C.<code>ON somecondition;</code></p>
 <ol>
 <li><p>不等联接，在ON语句中用&lt;&gt;表示不等</p>
 </li>
 <li><p>自然联接，利用相同列名的内联接</p>
 </li>
 </ol>
-<p>###九. 查询中的查询###</p>
-<ol>
-<li><p>IN：表示列中的值如果属于括号中的值，则返回该行</p>
+<h3 id="九-_查询中的查询">九. 查询中的查询</h3><ol>
+<li><p><code>IN</code>：表示列中的值如果属于括号中的值，则返回该行</p>
 </li>
 <li><p>子查询：</p>
 </li>
 </ol>
+<blockquote>
 <p>A.SELECT some_column, another_column</p>
+</blockquote>
 <p>B.FROM table</p>
 <p>C.WHERE column=(SELECT column FORM table)</p>
 <p>D.子查询返回一个结果用=，返回多个结果用in</p>
@@ -287,33 +277,31 @@ desc是describe的缩写，用于查看表的结构。
 </li>
 <li><p>关联子查询，子查询依赖外层查询</p>
 </li>
-<li><p>in和exist区别</p>
+<li><p><code>in</code>和<code>exist</code>区别</p>
 </li>
 </ol>
-<p>A.in 是一个集合运算符.a in {a,c,d,s,d….}，这个运算中,前面是一个元素,后面是一个集合,集合中的元素类型是和前面的元素一样的.</p>
-<p>B.exists是一个存在判断,如果后面的查询中有结果,则exists为真,否则为假.</p>
-<p>C.in 运算用在语句中,它后面带的select一定是选一个字段,而不是select *.</p>
-<p>D.比如说你要判断某班是否存在一个名为”小明”的学生,你可以用in 运算:”小明” in (select sname from student)这样(select sname from student) 返回的是一个全班姓名的集合,in用于判断”小明”是否为此集合中的一个数据;同时,你也可以用exists语句:exists (select * from student where sname=”小明”)</p>
-<p>###一零.      外联接、自联接与联合###</p>
-<ol>
+<p>A.<code>in</code> 是一个集合运算符<code>a in {a,c,d,s,d....}</code>，这个运算中,前面是一个元素,后面是一个集合,集合中的元素类型是和前面的元素一样的.</p>
+<p>B.<code>exists</code>是一个存在判断,如果后面的查询中有结果,则<code>exists</code>为真,否则为假.</p>
+<p>C.in 运算用在语句中,它后面带的<code>select</code>一定是选一个字段,而不是<code>select *</code>.</p>
+<p>D.比如说你要判断某班是否存在一个名为”小明”的学生,你可以用<code>in</code> 运算:”小明” <code>in (select sname from student)</code>这样<code>(select sname from student)</code>返回的是一个全班姓名的集合,<code>in</code>用于判断”小明”是否为此集合中的一个数据;同时,你也可以用<code>exists</code>语句:<code>exists (select * from student where sname=&quot;小明&quot;)</code></p>
+<h3 id="一零-_外联接、自联接与联合">一零.      外联接、自联接与联合</h3><ol>
 <li><p>外联接：外联接一定会出现数据行，无论该行是否在另一个表中找出相匹配的行。左外联结如果出现NULL则表示右表没有找到与左表相符的纪录。如果匹配多条数据时就会取出多行。右外联结跟左外联结几乎一样。</p>
 </li>
 <li><p>自联接：能把单一表当成两张具有完全相同的信息的表来进行查询。</p>
 </li>
-<li><p>联合：把两张或多张表的查询结果合并到一张表中。但只能用一次order by。</p>
+<li><p>联合：把两张或多张表的查询结果合并到一张表中。但只能用一次<code>order by</code>。</p>
 </li>
 </ol>
-<p>A.每个SELECT语句中列的数量必须一致</p>
-<p>B.每个SELECT语句包含的表达式与统计函数也必须相同</p>
-<p>C.SELECT语句的顺序不重要</p>
-<p>D.SELECT默认会清除重复值</p>
+<p>A.每个<code>SELECT</code>语句中列的数量必须一致</p>
+<p>B.每个<code>SELECT</code>语句包含的表达式与统计函数也必须相同</p>
+<p>C.<code>SELECT</code>语句的顺序不重要</p>
+<p>D.<code>SELECT</code>默认会清除重复值</p>
 <p>E.列的数据类型必须相同或者可以互相转换</p>
 <p>F.如果需要看到重复数据，可以使用UNION ALL，返回每个相符的纪录。</p>
 <ol>
 <li>有些数据库支持交集和差集，用法跟UNION一样。</li>
 </ol>
-<p>###一一.      约束、视图与事务###</p>
-<ol>
+<h3 id="一一-_约束、视图与事务">一一.      约束、视图与事务</h3><ol>
 <li><p>在新建表时，用CHECK语句来增加约束。但MySQL会忽略CHECK.</p>
 </li>
 <li><p>视图是一个只有在查询中使用VIEW时才存在的表。它被视为虚拟表，能用于查询，但不会一直保存在数据库中。</p>
@@ -346,7 +334,7 @@ desc是describe的缩写，用于查看表的结构。
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://tanwei.link/2015/09/01/深入浅出SQL/" data-title="深入浅出SQL | 唐三赞" data-tsina="1398019404" class="share clearfix">
+	  <div data-url="http://tanwei.link/2015/09/01/深入浅出SQL/" data-title="深入浅出SQL笔记 | 唐三赞" data-tsina="1398019404" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -359,11 +347,19 @@ desc是describe的缩写，用于查看表的结构。
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2015/09/01/markdown自问自答/" title="markdown自问自答">
+  <strong>上一篇：</strong><br/>
+  <span>
+  markdown自问自答</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2015/09/01/markdown自问自答/"  title="markdown自问自答">
+<a href="/2015/08/13/什么时候说理/"  title="什么时候说理">
  <strong>下一篇：</strong><br/> 
- <span>markdown自问自答
+ <span>什么时候说理
 </span>
 </a>
 </div>
@@ -372,7 +368,7 @@ desc是describe的缩写，用于查看表的结构。
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/09/01/深入浅出SQL/" data-title="深入浅出SQL" data-url="http://tanwei.link/2015/09/01/深入浅出SQL/"></div>
+	<div class="ds-thread" data-thread-key="2015/09/01/深入浅出SQL/" data-title="深入浅出SQL笔记" data-url="http://tanwei.link/2015/09/01/深入浅出SQL/"></div>
 </section>
 
 
@@ -382,7 +378,7 @@ desc是describe的缩写，用于查看表的结构。
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-数据和表"><span class="toc-number">1.</span> <span class="toc-text">一.数据和表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-_SELECT语句"><span class="toc-number">2.</span> <span class="toc-text">二. SELECT语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-_DELETE和UPDATE"><span class="toc-number">3.</span> <span class="toc-text">三. DELETE和UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-_聪明的表设计"><span class="toc-number">4.</span> <span class="toc-text">四. 聪明的表设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五-_ALTER"><span class="toc-number">5.</span> <span class="toc-text">五. ALTER</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六-_SELECT进阶"><span class="toc-number">6.</span> <span class="toc-text">六. SELECT进阶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七-_多张表的数据库设计"><span class="toc-number">7.</span> <span class="toc-text">七. 多张表的数据库设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八-_连接与多张表的操作"><span class="toc-number">8.</span> <span class="toc-text">八. 连接与多张表的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九-_查询中的查询"><span class="toc-number">9.</span> <span class="toc-text">九. 查询中的查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一零-_外联接、自联接与联合"><span class="toc-number">10.</span> <span class="toc-text">一零.      外联接、自联接与联合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一一-_约束、视图与事务"><span class="toc-number">11.</span> <span class="toc-text">一一.      约束、视图与事务</span></a></li></ol>
  
   </div>
 
@@ -401,6 +397,10 @@ desc是describe的缩写，用于查看表的结构。
 		
 		  
 			<li><a href="/categories/感悟/" title="感悟">感悟<sup>7</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -434,6 +434,14 @@ desc是describe的缩写，用于查看表的结构。
 		
 			
 				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/独立思考/" title="独立思考">独立思考<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/逻辑思维/" title="逻辑思维">逻辑思维<sup>1</sup></a></li>
 			
 		
 		</ul>
