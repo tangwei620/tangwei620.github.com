@@ -4,32 +4,41 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>成为一个有趣的人 | 唐三赞</title>
+    <title>深入浅出SQL笔记 | 唐三赞</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="tangwei">
     
 
     
-    <meta name="description" content="听到一个最精彩关于“有趣”的定义：有趣就是牛逼，牛逼就是有趣。说的文雅一点，有趣的人就是——观察到的这个人远远强于想象中的这个人。你以为他不懂，结果他侃侃而谈，好有趣；你以为他不会，结果他游刃有余，好厉害。
-有趣首先无害，其次还有点精神愉悦，甚至还能净化灵魂。有趣不等于瞎开心，该有点意外，有点惊讶，是跳出现实的创新精神，也该是互联网精神的核心。
+    <meta name="description" content="###一. 数据和表###
 
-按王小圈的说法，成为一个有趣的人，该做到以下几点：">
+要在一个表中增加新的列不太方便，所以事前确定表的结构和数据类型非常重要。当然你可以用ALTER来增加新列。
+慎用DROP TABLE，不然数据全没了。
+varchar是variable character的缩写，表示可变字符。
+desc是describe的缩写，用于查看表的结构。
+任何属于varchar、char、date、blob类型的值都要加单引号。而int和de">
 <meta property="og:type" content="article">
-<meta property="og:title" content="成为一个有趣的人">
-<meta property="og:url" content="http://tanwei.link/2015/08/13/成为一个有趣的人/index.html">
+<meta property="og:title" content="深入浅出SQL笔记">
+<meta property="og:url" content="http://tanwei.link/2015/09/01/深入浅出SQL笔记/index.html">
 <meta property="og:site_name" content="唐三赞">
-<meta property="og:description" content="听到一个最精彩关于“有趣”的定义：有趣就是牛逼，牛逼就是有趣。说的文雅一点，有趣的人就是——观察到的这个人远远强于想象中的这个人。你以为他不懂，结果他侃侃而谈，好有趣；你以为他不会，结果他游刃有余，好厉害。
-有趣首先无害，其次还有点精神愉悦，甚至还能净化灵魂。有趣不等于瞎开心，该有点意外，有点惊讶，是跳出现实的创新精神，也该是互联网精神的核心。
+<meta property="og:description" content="###一. 数据和表###
 
-按王小圈的说法，成为一个有趣的人，该做到以下几点：">
-<meta property="og:updated_time" content="2015-08-13T15:30:00.494Z">
+要在一个表中增加新的列不太方便，所以事前确定表的结构和数据类型非常重要。当然你可以用ALTER来增加新列。
+慎用DROP TABLE，不然数据全没了。
+varchar是variable character的缩写，表示可变字符。
+desc是describe的缩写，用于查看表的结构。
+任何属于varchar、char、date、blob类型的值都要加单引号。而int和de">
+<meta property="og:updated_time" content="2015-09-01T12:37:30.748Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="成为一个有趣的人">
-<meta name="twitter:description" content="听到一个最精彩关于“有趣”的定义：有趣就是牛逼，牛逼就是有趣。说的文雅一点，有趣的人就是——观察到的这个人远远强于想象中的这个人。你以为他不懂，结果他侃侃而谈，好有趣；你以为他不会，结果他游刃有余，好厉害。
-有趣首先无害，其次还有点精神愉悦，甚至还能净化灵魂。有趣不等于瞎开心，该有点意外，有点惊讶，是跳出现实的创新精神，也该是互联网精神的核心。
+<meta name="twitter:title" content="深入浅出SQL笔记">
+<meta name="twitter:description" content="###一. 数据和表###
 
-按王小圈的说法，成为一个有趣的人，该做到以下几点：">
+要在一个表中增加新的列不太方便，所以事前确定表的结构和数据类型非常重要。当然你可以用ALTER来增加新列。
+慎用DROP TABLE，不然数据全没了。
+varchar是variable character的缩写，表示可变字符。
+desc是describe的缩写，用于查看表的结构。
+任何属于varchar、char、date、blob类型的值都要加单引号。而int和de">
 <meta name="twitter:creator" content="@hystangwei">
 
     
@@ -90,14 +99,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/08/13/成为一个有趣的人/" title="成为一个有趣的人" itemprop="url">成为一个有趣的人</a>
+      <a href="/2015/09/01/深入浅出SQL笔记/" title="深入浅出SQL笔记" itemprop="url">深入浅出SQL笔记</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="tangwei" target="_blank" itemprop="author">tangwei</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-13T15:22:58.000Z" itemprop="datePublished"> 发表于 2015-08-13</time>
+    <time datetime="2015-09-01T12:35:00.000Z" itemprop="datePublished"> 发表于 2015-09-01</time>
     
   </p>
 </header>
@@ -110,12 +119,59 @@
 		
 		</div>
 		
-		<p>听到一个最精彩关于“有趣”的定义：<strong>有趣就是牛逼，牛逼就是有趣</strong>。说的文雅一点，有趣的人就是——观察到的这个人远远强于想象中的这个人。你以为他不懂，结果他侃侃而谈，好有趣；你以为他不会，结果他游刃有余，好厉害。</p>
-<p>有趣首先无害，其次还有点精神愉悦，甚至还能净化灵魂。有趣不等于瞎开心，该有点意外，有点惊讶，是跳出现实的创新精神，也该是互联网精神的核心。</p>
-<blockquote>
-<p>按王小圈的说法，成为一个有趣的人，该做到以下几点：1）广泛的知识面；2）敏锐的感知力；3）足够的鉴赏能力和执行力；4）不随便，有明确的喜好；5）有小缺陷，性情中人；6）独立人格，有主见，会坚持，会反驳；7）自嘲的心态；8）快速的反应能力。</p>
-</blockquote>
-<p>我再补充一点，有趣的人该有点钱，正当的钱，有钱让人自由、让人自信，让人不为生活所迫，让人不要为了生活而忘了生活质量，也能让有趣保持的久一点。</p>
+		<p>###一. 数据和表###</p>
+<ol>
+<li>要在一个表中增加新的列不太方便，所以事前确定表的结构和数据类型非常重要。当然你可以用ALTER来增加新列。</li>
+<li>慎用DROP TABLE，不然数据全没了。</li>
+<li>varchar是variable character的缩写，表示可变字符。</li>
+<li>desc是describe的缩写，用于查看表的结构。</li>
+<li>任何属于varchar、char、date、blob类型的值都要加单引号。而int和dec(浮点值)不用加单引号。</li>
+<li>为表插入数据时，可以使用任何一种INSERT语句。</li>
+<li>NULL是未定义的值，它不等于零，也不等于空值，值可以是NULL，但绝非等于NULL。</li>
+<li>没有在INSERT语句中被赋值的列默认为NULL。</li>
+<li>使用关键字NOT NULL表示该列不接受NULL值。</li>
+<li>使用DEFAULT设定默认值。<br>###二.    SELECT语句###</li>
+<li>单引号必须成对，有些英文中有一些地方会用单引号，可以用“\”来解决。不要使用双引号，虽然双引号好像也能用，但会引起意想不到的问题。</li>
+<li>用IS NULL来查找未定义值</li>
+<li>LIKE喜欢和通配符在一起，%是任意数量的未知字符的替身，——是一个未知字符的替身。</li>
+<li>between等于使用&lt;=加&gt;=，比后者更快。</li>
+<li>用IN来表示值的集合，不然就用NOT IN</li>
+<li>NOT的用法：一定要紧跟WHERE、OR、AND，而NOT IN可以是例外。但为了代码容易看懂，能不用NOT最好。<br>###三.    DELETE和UPDATE###</li>
+<li>UPDATE中的SET后面可以使用数学运算对数字批量操作，也可用于将原有列数据赋值给新增列<br>###四.    聪明的表设计###</li>
+<li>第一范式：<br>A.    每个数据行必须包含具有原子性的值<br>①.    具有原子性数据的列不会有多个类型相同的值<br>②.    具有原子性数据的表中不会有多个存储同类数据的列<br>B.    每个数据行必须有独一无二的识别项，人称主键<br>①.    主键不可以为NULL<br>②.    插入新记录时必须指定主键值<br>③.    主键必须简洁<br>④.    主键值不可以被修改</li>
+<li>使用SHOW CREATE TABLE来查看表的创建方式</li>
+<li>在CREATE中使用PREMARY KEY来指定主键，可以通过增加AUTO_INCREMENT实现自动从1递增，每个表中只有一列可以加上AUTO_INCREMENT，该列必须为整数且不能包含NULL。<br>###五.    ALTER###</li>
+<li>ALTER命令几乎能够改变表里的一切，但要小心如果改变列的类型，可能会遗失数据。<br>A.    CHANGE,可同时改变现有列的名称和数据类型<br>B.    MODIFY,修改现有列的数据类型和位置<br>C.    ADD，在当前表中添加一列<br>D.    DROP，从表中删除某列<br>E.    RENAME TO，更改名字</li>
+<li>有很多有用的字符串函数让我们非常方便做查询，比如RIGHT(),LEFT(),SUBSTRING_INDEX(),SUBSTRING(),UPPER(),LOWER(),REVERSE(),LTRIM(),RTRIM()等，但要注意字符串函数不会改变存储在表中的内容，它只是把字符串修改后的模样当成查询结果返回。<br>###六.    SELECT进阶###</li>
+<li>利用CASE检查所有列的值和条件</li>
+<li>ORDER BY可以使用两个字段</li>
+<li>注意用在ORDER BY中DESC与DESC TABLE是不用的缩写。</li>
+<li>SELECT后加SUM(),COUNT(),AVERAGE(),MAX(),MIN()来实现不同的查询</li>
+<li>SELECT后面的DISTINCT能选出无重复的值，如果搭配COUNT()使用可以查出无重复的统计值。</li>
+<li>SELECT搭配ORDER BY和LIMIT可以筛选出前几名。当然也可以筛选出特定的名次（请注意SQL从0开始编号）,LIMIT 1,4表示从2行开始选4个记录。</li>
+<li>GROUP BY表示分组来查找，也可将重复的值合并成一个值。<br>###七.    多张表的数据库设计###</li>
+<li>外键：其他表的主键<br>A.    外键可能与它引用的主键名称不同<br>B.    外键使用的主键叫父键<br>C.    外键所在的表叫父表<br>D.    外键的值可以是NULL，主键不能为NULL<br>E.    外键无需唯一，事实上通常都不唯一<br>F.    外键不一定必须是父表的主键，但必须有唯一性。</li>
+<li>第一范式<br>A.    规则1：具有原子性数据的列不会有多个类型相同的值<br>B.    规则2：具有原子性数据的表中不会有多个存储同类数据的列</li>
+<li>第二范式<br>A.    规则1：先符合第一范式<br>B.    规则2：没有部分函数依赖性<br>①.    部分函数依赖只存在于组合主键中<br>②.    非主键依赖于组合主键的某个部分</li>
+<li>依赖：就是A列跟着B列变化，A列依赖于B列<br>C.    任何有人工主键且没有组合主键的表都符合第二范式</li>
+<li>第三范式<br>A.    规则1：先符合第二范式<br>B.    规则2：没有传递函数依赖<br>①.    传递函数依赖：非键列与相同表中的其他列有关联<br>###八.    连接与多张表的操作###</li>
+<li>AS：一切都与别名有关（aliasing）,也用于引用某个查询的结果来安插至另一个表中，配合CREATE TABLE使用。</li>
+<li>INNER JOIN：内联接，通过查询中的条件移除了某些结果数据行后的交叉连接。<br>A.    SELECT somecolumns<br>B.    FROM table1<br>①.    INNER JOIN<br>②.    table2<br>C.    ON somecondition;</li>
+<li>不等联接，在ON语句中用&lt;&gt;表示不等</li>
+<li>自然联接，利用相同列名的内联接<br>###九.    查询中的查询###</li>
+<li>IN：表示列中的值如果属于括号中的值，则返回该行</li>
+<li>子查询：<br>A.    SELECT some_column, another_column<br>B.    FROM table<br>C.    WHERE column=(SELECT column FORM table)<br>D.    子查询返回一个结果用=，返回多个结果用in</li>
+<li>如果子查询可以独立运行且不会引用外层查询的任何结果，则称为非关联子查询。</li>
+<li>关联子查询，子查询依赖外层查询</li>
+<li>in和exist区别<br>A.    in 是一个集合运算符.a in {a,c,d,s,d….}，这个运算中,前面是一个元素,后面是一个集合,集合中的元素类型是和前面的元素一样的.<br>B.    exists是一个存在判断,如果后面的查询中有结果,则exists为真,否则为假.<br>C.    in 运算用在语句中,它后面带的select一定是选一个字段,而不是select <em>.<br>D.    比如说你要判断某班是否存在一个名为”小明”的学生,你可以用in 运算:”小明” in (select sname from student)这样(select sname from student) 返回的是一个全班姓名的集合,in用于判断”小明”是否为此集合中的一个数据;同时,你也可以用exists语句:exists (select </em> from student where sname=”小明”)<br>###一零.    外联接、自联接与联合###</li>
+<li>外联接：外联接一定会出现数据行，无论该行是否在另一个表中找出相匹配的行。左外联结如果出现NULL则表示右表没有找到与左表相符的纪录。如果匹配多条数据时就会取出多行。右外联结跟左外联结几乎一样。</li>
+<li>自联接：能把单一表当成两张具有完全相同的信息的表来进行查询。</li>
+<li>联合：把两张或多张表的查询结果合并到一张表中。但只能用一次order by。<br>A.    每个SELECT语句中列的数量必须一致<br>B.    每个SELECT语句包含的表达式与统计函数也必须相同<br>C.    SELECT语句的顺序不重要<br>D.    SELECT默认会清除重复值<br>E.    列的数据类型必须相同或者可以互相转换<br>F.    如果需要看到重复数据，可以使用UNION ALL，返回每个相符的纪录。</li>
+<li>有些数据库支持交集和差集，用法跟UNION一样。<br>###一一.    约束、视图与事务###</li>
+<li>在新建表时，用CHECK语句来增加约束。但MySQL会忽略CHECK.</li>
+<li>视图是一个只有在查询中使用VIEW时才存在的表。它被视为虚拟表，能用于查询，但不会一直保存在数据库中。<br>A.    视图能把复杂命令简化<br>B.    视图可以隐藏一些敏感数据</li>
+<li>事务：是一群可完成一组工作的SQL语句。如果所有步骤无法不受干扰的完成，则不该完成任何单一步骤。</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -123,13 +179,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/感悟/">感悟</a>
+  <a class="article-category-link" href="/categories/IT/">IT</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/心得/">心得</a><a href="/tags/感悟/">感悟</a><a href="/tags/读书/">读书</a>
+  <span></span> <a href="/tags/SQL/">SQL</a>
   </div>
 
 </div>
@@ -138,7 +194,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://tanwei.link/2015/08/13/成为一个有趣的人/" data-title="成为一个有趣的人 | 唐三赞" data-tsina="1398019404" class="share clearfix">
+	  <div data-url="http://tanwei.link/2015/09/01/深入浅出SQL笔记/" data-title="深入浅出SQL笔记 | 唐三赞" data-tsina="1398019404" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -152,18 +208,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/08/13/什么时候说理/" title="什么时候说理">
+ <a href="/2015/09/01/markdown自问自答/" title="markdown自问自答">
   <strong>上一篇：</strong><br/>
   <span>
-  什么时候说理</span>
+  markdown自问自答</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/08/13/弱者思维和强者思维/"  title="弱者思维和强者思维">
+<a href="/2015/08/13/什么时候说理/"  title="什么时候说理">
  <strong>下一篇：</strong><br/> 
- <span>弱者思维和强者思维
+ <span>什么时候说理
 </span>
 </a>
 </div>
@@ -172,7 +228,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/08/13/成为一个有趣的人/" data-title="成为一个有趣的人" data-url="http://tanwei.link/2015/08/13/成为一个有趣的人/"></div>
+	<div class="ds-thread" data-thread-key="2015/09/01/深入浅出SQL笔记/" data-title="深入浅出SQL笔记" data-url="http://tanwei.link/2015/09/01/深入浅出SQL笔记/"></div>
 </section>
 
 
