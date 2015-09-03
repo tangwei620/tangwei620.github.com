@@ -82,6 +82,84 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/09/04/git学习笔记/" title="git学习笔记" itemprop="url">git学习笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="tangwei" target="_blank" itemprop="author">tangwei</a>
+		
+  <p class="article-time">
+    <time datetime="2015-09-03T16:30:37.000Z" itemprop="datePublished"> 发表于 2015-09-04</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="1-_git概述">1. git概述</h3><p>1.1 Git是目前世界上最先进的分布式版本控制系统。</p>
+<p>2.1 Linus花了两周时间自己用C写了一个分布式版本控制系统，这就是Git。    </p>
+<h3 id="2-_安装git">2. 安装git</h3><p>2.1 windows用msysgit安装</p>
+<p>2.2 打开gitbash能看到美元符号就说明成果了</p>
+<p>2.3 用下列命令设定用户名和密码。</p>
+<pre><code>$ git config --global user<span class="class">.name</span> <span class="string">"Your Name"</span>    
+$ git config --global user<span class="class">.email</span> <span class="string">"email@example.com"</span>
+</code></pre><h3 id="3-_创建git库">3. 创建git库</h3><p>3.1 选择一个合适路径，建立一个空文件夹，然后在空白处点击右键，选择git bash，输入<code>git init</code>，这样该路径下就会产生一个.git的文件夹，不要修改它。    </p>
+<p>3.2 千万不要使用Windows自带的记事本编辑任何文本文件。原因是Microsoft开发记事本的团队使用了一个非常弱智的行为来保存UTF-8编码的文件，他们自作聪明地在每个文件开头添加了0xefbbbf（十六进制）的字符，你会遇到很多不可思议的问题，比如，网页第一行可能会显示一个“?”，明明正确的程序一编译就报语法错误，等等，都是由记事本的弱智行为带来的。建议你下载Notepad++代替记事本，不但功能强大，而且免费！记得把Notepad++的默认编码设置为UTF-8 without BOM即可。    </p>
+<p>3.3 将文件放到Git仓库中，先用命令<code>git add</code>把文件添加到仓库，然后用<code>git commit -m”comments”</code>提交到仓库。</p>
+<p>3.4 要掌握工作区的状态，使用<code>git status</code>。</p>
+<p>3.5 要看文件具体哪里被修改了，使用<code>git diff</code>。</p>
+<p>3.6 要看文件的历史，使用<code>git log</code>。如果想要精简显示，可以加上<code>–pretty=oneline</code>。</p>
+<p>3.7 如果要回退到某个版本，使用<code>git reset –hard HEAD^</code>，上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成<code>HEAD~100</code></p>
+<p>3.8 另外，也可以使用commit_id过去未来穿梭到某个版本，详细命令是<code>git reset –hard commit_id</code>。可以使用<code>git log</code>查看历史，以确定回到哪个版本。要重返未来，使用<code>git reflog</code>查看命令历史，以便确定回来的commit_id。</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/09/04/git学习笔记/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/IT/">IT</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/git/">git</a><a href="/tags/学习笔记/">学习笔记</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/09/04/git学习笔记/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/09/04/git学习笔记/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/09/01/学会提问读书笔记/" title="学会提问" itemprop="url">学会提问</a>
   </h1>
   <p class="article-author">By
@@ -705,69 +783,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/08/13/前路/" title="前路" itemprop="url">前路</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="tangwei" target="_blank" itemprop="author">tangwei</a>
-		
-  <p class="article-time">
-    <time datetime="2015-08-13T14:43:51.000Z" itemprop="datePublished"> 发表于 2015-08-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>林荫小道，前路分成两股<br>可是我不知如何选择<br>形单影只也无人可问<br>远远探望它们延伸开去<br>直到深处<br>最后，我走向了脚印多的那条<br>多年以后，回想当初<br>我忍不住叹息<br><strong>少有人走过的路才是最近的路</strong></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/感悟/">感悟</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/感悟/">感悟</a><a href="/tags/诗歌/">诗歌</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/08/13/前路/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/08/13/前路/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -786,7 +801,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/IT/" title="IT">IT<sup>2</sup></a></li>
+			<li><a href="/categories/IT/" title="IT">IT<sup>3</sup></a></li>
 		  
 		
 		  
@@ -836,6 +851,14 @@
 		
 			
 				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>1</sup></a></li>
 			
 		
 		</ul>
